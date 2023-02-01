@@ -6,10 +6,12 @@ public class cat : MonoBehaviour
 {
     public float moveSpeed = 1;
     public float turnSpeed = 0.1f;
-    public float jumpForce = 1;
+    public float jumpForce = 3000f;
     public float mouseX;
     public GameObject player;
     private Rigidbody rb;
+
+    private bool isOnGround = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +24,6 @@ public class cat : MonoBehaviour
         Move();
     }
     
-    private void LateUpdate()
-    {
-        transform.Rotate(Vector3.left * 10, Input.GetAxis("Mouse Y"), Space.World);
-        transform.Rotate(Vector3.up * 10, Input.GetAxis("Mouse X"), Space.World);
-    }
     private void Move()
     {
         float horizontal = Input.GetAxis("Horizontal");
@@ -47,7 +44,11 @@ public class cat : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(0,3,0, ForceMode.Impulse);
+            Vector3 dwn = transform.TransformDirection (Vector3.down);
+            isOnGround = (Physics.Raycast(transform.position, dwn, 0.7f));
+            if (isOnGround)
+                rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
         }
     }
 }
+    
