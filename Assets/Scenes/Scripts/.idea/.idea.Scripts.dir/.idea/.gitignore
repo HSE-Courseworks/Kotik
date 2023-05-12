@@ -2,8 +2,13 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
+<<<<<<< Updated upstream:Assets/Scenes/Scripts/.idea/.idea.Scripts.dir/.idea/.gitignore
 /modules.xml
 /projectSettingsUpdater.xml
+=======
+/projectSettingsUpdater.xml
+/modules.xml
+>>>>>>> Stashed changes:Assets/Scripts/.idea/.idea.Scripts.dir/.idea/.gitignore
 /contentModel.xml
 /.idea.Scripts.iml
 # Editor-based HTTP Client requests

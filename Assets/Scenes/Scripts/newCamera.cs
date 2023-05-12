@@ -30,7 +30,7 @@ public class newCamera : MonoBehaviour
         private float currentDistance;
         private float desiredDistance;
         private float correctedDistance;
-       
+
         void Start()
         {
                 Vector3 angles = transform.eulerAngles;
@@ -40,7 +40,7 @@ public class newCamera : MonoBehaviour
                 currentDistance = distance;
                 desiredDistance = distance;
                 correctedDistance = distance;
-               
+
                 if (GetComponent<Rigidbody>())
                         GetComponent<Rigidbody>().freezeRotation = true;
         }
@@ -87,7 +87,7 @@ public class newCamera : MonoBehaviour
                
                 currentDistance = !isCorrected || correctedDistance > currentDistance ? Mathf.Lerp (currentDistance, correctedDistance, Time.deltaTime * zoomDampening) : correctedDistance;
                
-                currentDistance = Mathf.Clamp (currentDistance, minDistance, maxDistance);
+                currentDistance = Mathf.Clamp(currentDistance, minDistance, maxDistance);
                
                 position = target.transform.position - (rotation * Vector3.forward * currentDistance + vTargetOffset);
                
@@ -103,6 +103,6 @@ public class newCamera : MonoBehaviour
                         angle += 360;
                 if (angle > 360)
                         angle -= 360;
-                return Mathf.Clamp (angle, min, max);
+                return Mathf.Clamp(angle, min, max);
         }
 }

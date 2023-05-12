@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+<<<<<<< Updated upstream:Assets/Scenes/Scripts/.idea/.idea.Scripts.dir/.idea/vcs.xml
     <mapping directory="$PROJECT_DIR$/../../.." vcs="Git" />
+=======
+    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
+>>>>>>> Stashed changes:Assets/Scripts/.idea/.idea.Scripts.dir/.idea/vcs.xml
   </component>
 </project>
